@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logoSvg from "../assets/logo-C7x2HOp7.svg";
 
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 const item = {
@@ -67,27 +68,8 @@ export function Hero() {
             />
             <div className="absolute inset-0 rounded-[2.5rem] bg-white border border-black/5 shadow-2xl shadow-lt-green-900/10 overflow-hidden grain">
               <div className="absolute inset-0 flex items-center justify-center p-10">
-                <img src="/assets/logo-C7x2HOp7.svg" alt="Lifetech" className="w-3/5" />
+                <img src={logoSvg} alt="Lifetech" className="w-3/5" />
               </div>
-              {/* <motion.div l
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 5, repeat: Infinity }}
-                className="absolute top-6 right-6 bg-white shadow-lg rounded-2xl px-4 py-3 border border-black/5"
-              >
-                <div className="text-[10px] uppercase tracking-widest text-ink-soft">Uptime</div>
-                <div className="font-display text-xl font-semibold text-lt-green-700">99.9%</div>
-              </motion.div>
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-                className="absolute bottom-6 left-6 bg-white shadow-lg rounded-2xl px-4 py-3 border border-black/5 flex items-center gap-3"
-              >
-                <div className="w-9 h-9 rounded-full bg-lt-green-100 flex items-center justify-center text-lt-green-700">✓</div>
-                <div>
-                  <div className="text-xs text-ink-soft">Enterprise ready</div>
-                  <div className="text-sm font-medium">Trusted Partner</div>
-                </div>
-              </motion.div> */}
             </div>
           </div>
         </motion.div>
@@ -108,11 +90,7 @@ export function About() {
           className="relative"
         >
           <div className="relative rounded-4xl bg-linear-to-br from-lt-green-50 to-emerald-100/60 p-12 border border-lt-green-100">
-            <img src="/assets/logo-C7x2HOp7.svg" alt="About Lifetech" className="w-full max-w-sm mx-auto" />
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl px-6 py-4 border border-black/5">
-              <div className="font-display text-3xl font-bold text-lt-green-700">LIFETECH</div>
-              {/* <div className="text-xs text-ink-soft uppercase tracking-widest">Since Day One</div> */}
-            </div>
+            <img src={logoSvg} alt="About Lifetech" className="w-full max-w-sm mx-auto" />
           </div>
         </motion.div>
         <motion.div

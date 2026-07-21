@@ -1,30 +1,51 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Import semua gambar produk
+import humanImg from "../assets/human-Bx1kiDJp.svg";
+import customerImg from "../assets/customer-M9LGYp1A.svg";
+import searchImg from "../assets/search-DbVPPTzh.svg";
+import documentImg from "../assets/document-DQneznOd.svg";
+import informationImg from "../assets/information-DUdVVZIc.svg";
+import artificalImg from "../assets/artifical-DqrJOi0u.svg";
+import cardImg from "../assets/card-1LzaiJGi.svg";
+import switchingImg from "../assets/switching-wZ_xB0yE.svg";
+import multiImg from "../assets/multi-BY1QT8iF.svg";
+import riskImg from "../assets/risk--CJlNFFM.svg";
+import digitalImg from "../assets/digital-C32MM46E.svg";
+import coreImg from "../assets/core-COObDV3a.svg";
+import wealtImg from "../assets/wealt-BFbkBAIX.svg";
+import antimoneyImg from "../assets/antimoney-DBkmEdCb.svg";
+import forexImg from "../assets/forex-ZkqmSPdB.svg";
+import tradeImg from "../assets/trade-DiHlmgJa.svg";
+import microImg from "../assets/micro-DpE66LDm.svg";
+import swiftImg from "../assets/swift-D6gxFjFg.svg";
+import financialImg from "../assets/financial-DJ0L8Pdw.svg";
+
 const solutions = [
-  { title: "Human Resources & Payroll System", img: "human-Bx1kiDJp.svg" },
-  { title: "Customer Bootstramble Management (CRM)", img: "customer-M9LGYp1A.svg" },
-  { title: "Search Engine Optimization (SEO)", img: "search-DbVPPTzh.svg" },
-  { title: "Document Management System", img: "document-DQneznOd.svg" },
-  { title: "Information System Product", img: "information-DUdVVZIc.svg" },
-  { title: "Artificial Intelligence Implementation", img: "artifical-DqrJOi0u.svg" },
-  { title: "Card Management System", img: "card-1LzaiJGi.svg" },
-  { title: "Switching", img: "switching-wZ_xB0yE.svg" },
-  { title: "Multi-Vendor System", img: "multi-BY1QT8iF.svg" },
-  { title: "Risk Management", img: "risk--CJlNFFM.svg" },
-  { title: "Fraud Detection System", img: "artifical-DqrJOi0u.svg" },
-  { title: "Digital Engagement", img: "digital-C32MM46E.svg" },
+  { title: "Human Resources & Payroll System", img: humanImg },
+  { title: "Customer Bootstramble Management (CRM)", img: customerImg },
+  { title: "Search Engine Optimization (SEO)", img: searchImg },
+  { title: "Document Management System", img: documentImg },
+  { title: "Information System Product", img: informationImg },
+  { title: "Artificial Intelligence Implementation", img: artificalImg },
+  { title: "Card Management System", img: cardImg },
+  { title: "Switching", img: switchingImg },
+  { title: "Multi-Vendor System", img: multiImg },
+  { title: "Risk Management", img: riskImg },
+  { title: "Fraud Detection System", img: artificalImg },
+  { title: "Digital Engagement", img: digitalImg },
 ];
 
 const banking = [
-  { title: "Core Banking System", img: "core-COObDV3a.svg" },
-  { title: "Wealth Management System", img: "wealt-BFbkBAIX.svg" },
-  { title: "Anti Money Laundering System", img: "antimoney-DBkmEdCb.svg" },
-  { title: "Forex Trading System", img: "forex-ZkqmSPdB.svg" },
-  { title: "Trade Finance System", img: "trade-DiHlmgJa.svg" },
-  { title: "Micro Finance System", img: "micro-DpE66LDm.svg" },
-  { title: "SWIFT Messaging System", img: "swift-D6gxFjFg.svg" },
-  { title: "Financial Technology Solutions", img: "financial-DJ0L8Pdw.svg" },
+  { title: "Core Banking System", img: coreImg },
+  { title: "Wealth Management System", img: wealtImg },
+  { title: "Anti Money Laundering System", img: antimoneyImg },
+  { title: "Forex Trading System", img: forexImg },
+  { title: "Trade Finance System", img: tradeImg },
+  { title: "Micro Finance System", img: microImg },
+  { title: "SWIFT Messaging System", img: swiftImg },
+  { title: "Financial Technology Solutions", img: financialImg },
 ];
 
 function Card({ title, img, i }) {
@@ -39,7 +60,7 @@ function Card({ title, img, i }) {
     >
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-lt-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
       <div className="w-16 h-16 rounded-xl bg-lt-green-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-        <img src={`/assets/${img}`} alt={title} className="w-10 h-10" />
+        <img src={img} alt={title} className="w-10 h-10" />
       </div>
       <h3 className="font-display font-semibold text-lg text-ink leading-snug">{title}</h3>
       <div className="mt-4 h-[2px] w-8 bg-lt-green-600 group-hover:w-full transition-all duration-500" />

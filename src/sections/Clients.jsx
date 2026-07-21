@@ -1,11 +1,19 @@
+import kaixinImg from "../assets/kaixin-Bp2sq6h8.png";
+import lamakImg from "../assets/lamak-4MwW3pAG.png";
+import baktiImg from "../assets/bakti-CnTfB5tE.png";
+import vexueImg from "../assets/vexue-CDzUheOS.png";
+import sariteknologiImg from "../assets/sariteknologi-B3QRT4wn.png";
+import ultraImg from "../assets/ultra-EOtQDkHq.png";
+import plantImg from "../assets/plant-ToimtNWt.png";
+
 const clients = [
-  { name: "Kaixin", img: "kaixin-Bp2sq6h8.png" },
-  { name: "Lamak", img: "lamak-4MwW3pAG.png" },
-  { name: "Bakti Kasih Anugerah", img: "bakti-CnTfB5tE.png" },
-  { name: "Vexue", img: "vexue-CDzUheOS.png" },
-  { name: "SARI TEKNOLOGI", img: "sariteknologi-B3QRT4wn.png" },
-  { name: "Ultra Voucher", img: "ultra-EOtQDkHq.png" },
-  { name: "Plant Culture", img: "plant-ToimtNWt.png" },
+  { name: "Kaixin", img: kaixinImg },
+  { name: "Lamak", img: lamakImg },
+  { name: "Bakti Kasih Anugerah", img: baktiImg },
+  { name: "Vexue", img: vexueImg },
+  { name: "SARI TEKNOLOGI", img: sariteknologiImg },
+  { name: "Ultra Voucher", img: ultraImg },
+  { name: "Plant Culture", img: plantImg },
 ];
 
 export default function Clients() {
@@ -27,7 +35,7 @@ export default function Clients() {
           <div className="flex gap-16 marquee-track w-max items-center">
             {list.map((c, i) => (
               <div key={i} className="shrink-0 h-20 w-40 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
-                <img src={`/assets/${c.img}`} alt={c.name} className="max-h-16 max-w-full object-contain" />
+                <img src={c.img} alt={c.name} className="max-h-16 max-w-full object-contain" />
               </div>
             ))}
           </div>

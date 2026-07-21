@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import beetposLogo from "../assets/BEETPOS-B5eREQlo.png";
+import dashboardImg from "../assets/Frame-Bc0RF92k.png";
 
 const features = [
   {
@@ -118,7 +120,7 @@ export function BeetHero() {
           transition={{ duration: 0.8 }}
           className="lg:col-span-6"
         >
-          <img src="/assets/BEETPOS-B5eREQlo.png" alt="beetPOS" className="h-14 mb-8" />
+          <img src={beetposLogo} alt="beetPOS" className="h-14 mb-8" />
           <div className="text-sm font-medium text-bp-blue-700 uppercase tracking-widest">Features</div>
           <h2 className="font-display text-4xl md:text-6xl font-bold mt-3 leading-[1.05]">
             Everything you need to <span className="text-bp-blue-600">run your business</span>
@@ -135,7 +137,7 @@ export function BeetHero() {
           className="lg:col-span-6"
         >
           <div className="relative rounded-3xl overflow-hidden border border-black/5 shadow-2xl shadow-bp-blue-900/10 bg-white">
-            <img src="/assets/Frame-Bc0RF92k.png" alt="Dashboard" className="w-full h-auto" />
+            <img src={dashboardImg} alt="Dashboard" className="w-full h-auto" />
           </div>
         </motion.div>
       </div>

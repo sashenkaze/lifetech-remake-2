@@ -1,29 +1,34 @@
 import { motion } from "framer-motion";
+import serImg from "../assets/ser-DGRl8aWS.svg";
+import services1Img from "../assets/services-DgBB8G5S.svg";
+import services2Img from "../assets/services2-Czd3Ugej.svg";
+import services3Img from "../assets/services3-e_84v2i9.svg";
+import services4Img from "../assets/services4-B8RKmz24.svg";
 
 const services = [
   {
     title: "Mobile Development",
-    img: "ser-DGRl8aWS.svg",
+    img: serImg,
     text: "We will assist you in building mobile application, including Android, iOS or cross platform application.",
   },
   {
     title: "Application Development",
-    img: "services-DgBB8G5S.svg",
+    img: services1Img,
     text: "We will provide solutions to all your application development and integration, including desktop and website applications.",
   },
   {
     title: "Sistem Integration",
-    img: "services2-Czd3Ugej.svg",
+    img: services2Img,
     text: "We will help you integrate the best system for your problems, directly from our company associates.",
   },
   {
     title: "Project Management",
-    img: "services3-e_84v2i9.svg",
+    img: services3Img,
     text: "We will assist you to achieve the objectives of a particular project, according to agreed criteria and parameters.",
   },
   {
     title: "Support & Helpdesk",
-    img: "services4-B8RKmz24.svg",
+    img: services4Img,
     text: "We will provide a helpdesk tool that organizes customer communication to help businesses respond to customer and support them more quickly and effectively.",
   },
 ];
@@ -41,7 +46,7 @@ export default function Services() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {services.map((s, i) => (
             <motion.article
               key={s.title}
@@ -49,16 +54,11 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.07 }}
-              className={
-                "group relative rounded-3xl p-8 border overflow-hidden transition-all hover:-translate-y-1 " +
-                (i === 0
-                  ? "bg-white text-ink border-black/5 hover:shadow-xl hover:shadow-lt-green-900/5 md:row-span-2 md:col-span-1 lg:col-span-1 lg:row-span-2"
-                  : "bg-white border-black/5 hover:shadow-xl hover:shadow-lt-green-900/5")
-              }
+              className="group relative rounded-3xl p-8 border overflow-hidden transition-all hover:-translate-y-1 bg-white border-black/5 hover:shadow-xl hover:shadow-lt-green-900/5 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
             >
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-lt-green-50">
                 <img
-                  src={`/assets/${s.img}`}
+                  src={s.img}
                   alt={s.title}
                   className="w-9 h-9"
                 />

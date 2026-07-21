@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoSvg from "../assets/logo-C7x2HOp7.svg";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -41,7 +42,7 @@ export default function Navbar({ mode }) {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 group">
-          <img src="/assets/logo-C7x2HOp7.svg" alt="Logo Lifetech" className="h-9 w-auto transition-transform group-hover:scale-105" />
+          <img src={logoSvg} alt="Logo Lifetech" className="h-9 w-auto transition-transform group-hover:scale-105" />
           <span className={"font-display font-semibold text-lg " + accent}>Lifetech</span>
         </a>
         <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-ink/80">

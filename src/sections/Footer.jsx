@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logoSvg from "../assets/logo-C7x2HOp7.svg";
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
         <div className="grid lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3">
-              <img src="/assets/logo-C7x2HOp7.svg" alt="Lifetech" className="h-10 brightness-0 invert" />
+              <img src={logoSvg} alt="Lifetech" className="h-10 brightness-0 invert" />
             </div>
             <p className="mt-6 text-white/70 max-w-md leading-relaxed">
               PT Lifetech Tanpa Batas
