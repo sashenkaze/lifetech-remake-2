@@ -38,7 +38,8 @@ export function Hero() {
             <br />
             <span className="text-lt-green-600">With</span>
             <br />
-            The Future <span className="caret text-lt-green-600 font-light">|</span>
+            The Future 
+            {/* <span className="caret text-lt-green-600 font-light">|</span> */}
           </motion.h1>
           <motion.p variants={item} className="mt-8 max-w-xl text-lg text-ink-soft leading-relaxed">
             Whether a mobile, desktop or web application, we will design, build and maintain everything according to your <span className="text-lt-green-700 font-medium">vision</span>.
@@ -58,18 +59,40 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="lg:col-span-5 relative"
+          className="lg:col-span-5 flex justify-center items-center"
         >
-          <div className="relative aspect-square max-w-md mx-auto">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-[2.5rem] bg-linear-to-br from-lt-green-500 to-emerald-400 opacity-20 blur-2xl"
-            />
-            <div className="absolute inset-0 rounded-[2.5rem] bg-white border border-black/5 shadow-2xl shadow-lt-green-900/10 overflow-hidden grain">
-              <div className="absolute inset-0 flex items-center justify-center p-10">
-                <img src={logoSvg} alt="Lifetech" className="w-3/5" />
-              </div>
+          {/* Hero logo ring */}
+          <div style={{ position: "relative", width: 380, height: 380, display: "flex", alignItems: "center", justifyContent: "center" }}>
+            {/* Outer ring — spins CW */}
+            <div className="ring-outer" style={{
+              position: "absolute", inset: 0,
+              borderRadius: "50%",
+              border: "2px solid rgba(74,222,128,.3)",
+            }} />
+            {/* Inner ring — spins CCW */}
+            <div className="ring-inner" style={{
+              position: "absolute", inset: 24,
+              borderRadius: "50%",
+              border: "1.5px solid rgba(52,211,153,.4)",
+            }} />
+            {/* Glow layer */}
+            <div className="ring-glow" style={{
+              position: "absolute", inset: 32,
+              borderRadius: "50%",
+              background: "radial-gradient(circle, rgba(187,247,208,.6), transparent 70%)",
+              filter: "blur(20px)",
+            }} />
+            {/* Logo circle */}
+            <div className="logo-circle" style={{
+              position: "relative",
+              width: 290, height: 290,
+              background: "linear-gradient(145deg, #fff, #f8fafc)",
+              borderRadius: "50%",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              boxShadow: "0 20px 60px rgba(22,163,74,.18), 0 4px 16px rgba(0,0,0,.06)",
+              border: "1px solid rgba(187,247,208,.7)",
+            }}>
+              <img src={logoSvg} alt="Lifetech" style={{ width: 170, height: 170, objectFit: "contain" }} />
             </div>
           </div>
         </motion.div>

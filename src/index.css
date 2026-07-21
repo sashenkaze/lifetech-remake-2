@@ -59,3 +59,19 @@ body { -webkit-font-smoothing: antialiased; }
 /* Hide scrollbar for horizontal scroller */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes spinCW  { from { transform: rotate(0deg);   } to { transform: rotate(360deg);  } }
+@keyframes spinCCW { from { transform: rotate(0deg);   } to { transform: rotate(-360deg); } }
+@keyframes orbPulse {
+  0%, 100% { opacity: .6; transform: scale(1);    }
+  50%       { opacity: 1;  transform: scale(1.08); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-8px); }
+}
+
+.ring-outer  { animation: spinCW   22s linear      infinite; }
+.ring-inner  { animation: spinCCW  16s linear      infinite; }
+.ring-glow   { animation: orbPulse  5s ease-in-out infinite; }
+.logo-circle { animation: floatY    5s ease-in-out infinite; }
