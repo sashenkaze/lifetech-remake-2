@@ -69,7 +69,7 @@ export function Hero() {
               <div className="absolute inset-0 flex items-center justify-center p-10">
                 <img src="/assets/logo-C7x2HOp7.svg" alt="Lifetech" className="w-3/5" />
               </div>
-              {/* <motion.div
+              {/* <motion.div l
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 5, repeat: Infinity }}
                 className="absolute top-6 right-6 bg-white shadow-lg rounded-2xl px-4 py-3 border border-black/5"
