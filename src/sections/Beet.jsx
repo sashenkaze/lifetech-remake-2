@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import beetposLogo from "../assets/BEETPOS-B5eREQlo.png";
 import dashboardImg from "../assets/Frame-Bc0RF92k.png";
 
@@ -113,13 +112,7 @@ export function BeetHero() {
     <section id="beetpos" className="relative pt-24 pb-32 overflow-hidden bg-linear-to-b from-bp-blue-50 to-white">
       <div className="absolute -top-40 -right-40 w-xl h-144 rounded-full bg-bp-blue-100 blur-3xl opacity-70" />
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="lg:col-span-6"
-        >
+        <div className="lg:col-span-6">
           <img src={beetposLogo} alt="beetPOS" className="h-14 mb-8" />
           <div className="text-sm font-medium text-bp-blue-700 uppercase tracking-widest">Features</div>
           <h2 className="font-display text-4xl md:text-6xl font-bold mt-3 leading-[1.05]">
@@ -128,18 +121,12 @@ export function BeetHero() {
           <p className="mt-6 text-lg text-ink-soft max-w-lg">
             BeetPOS is packed with powerful features to streamline your operations and boost your sales.
           </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
-          className="lg:col-span-6"
-        >
+        </div>
+        <div className="lg:col-span-6">
           <div className="relative rounded-3xl overflow-hidden border border-black/5 shadow-2xl shadow-bp-blue-900/10 bg-white">
             <img src={dashboardImg} alt="Dashboard" className="w-full h-auto" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -149,13 +136,9 @@ export function Features() {
   return (
     <section className="relative py-20">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {features.map((f, idx) => (
-          <motion.div
+        {features.map((f) => (
+          <div
             key={f.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: (idx % 3) * 0.08 }}
             className="group rounded-2xl p-8 bg-white border border-black/5 hover:border-bp-blue-200 hover:shadow-xl hover:shadow-bp-blue-900/5 transition-all"
           >
             <div className="flex items-center justify-between">
@@ -166,7 +149,7 @@ export function Features() {
             </div>
             <h3 className="font-display text-xl font-semibold mt-6">{f.title}</h3>
             <p className="mt-3 text-ink-soft leading-relaxed">{f.text}</p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
@@ -184,12 +167,8 @@ export function HowItWorks() {
         <div className="grid md:grid-cols-3 gap-6 relative">
           <div className="hidden md:block absolute top-16 left-[16%] right-[16%] h-0.5 bg-linear-to-r from-bp-blue-200 via-bp-blue-500 to-bp-blue-200" />
           {steps.map((s, i) => (
-            <motion.div
-              key={s.n}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+            <div
+              key={s.title}
               className="relative bg-white rounded-3xl p-8 border border-black/5 text-center shadow-sm hover:shadow-xl transition-shadow"
             >
               <div className="relative mx-auto w-20 h-20 rounded-full bg-bp-blue-100 shadow-lg flex items-center justify-center">
@@ -199,7 +178,7 @@ export function HowItWorks() {
               </div>
               <h3 className="font-display text-2xl font-semibold mt-6">{s.title}</h3>
               <p className="mt-3 text-ink-soft leading-relaxed">{s.text}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -217,12 +196,8 @@ export function Testimonials() {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <motion.figure
+            <figure
               key={t.name + i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
               className="rounded-3xl p-8 bg-white border border-black/5 hover:shadow-xl transition-shadow relative"
             >
               <div className="text-lg font-display text-bp-blue-200 leading-none mb-8">⭐⭐⭐⭐⭐</div>
@@ -236,7 +211,7 @@ export function Testimonials() {
                   <div className="text-sm text-ink-soft">{t.role}</div>
                 </div>
               </figcaption>
-            </motion.figure>
+            </figure>
           ))}
         </div>
       </div>
@@ -269,13 +244,9 @@ export function Pricing() {
           <p className="mt-4 text-ink-soft">Dapatkan solusi POS terbaik dengan harga yang sesuai kebutuhan bisnis Anda</p>
         </div>
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {pricing.map((p, i) => (
-            <motion.div
+          {pricing.map((p) => (
+            <div
               key={p.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
               className={
                 "relative rounded-3xl p-10 border transition-all hover:-translate-y-1 " +
                 (p.highlight
@@ -317,7 +288,7 @@ export function Pricing() {
 >
   Pilih Paket
 </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

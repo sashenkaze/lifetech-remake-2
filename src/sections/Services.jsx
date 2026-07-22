@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import serImg from "../assets/ser-DGRl8aWS.svg";
 import services1Img from "../assets/services-DgBB8G5S.svg";
 import services2Img from "../assets/services2-Czd3Ugej.svg";
@@ -47,13 +46,9 @@ export default function Services() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-6">
-          {services.map((s, i) => (
-            <motion.article
+          {services.map((s) => (
+            <article
               key={s.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: i * 0.07 }}
               className="group relative rounded-3xl p-8 border overflow-hidden transition-all hover:-translate-y-1 bg-white border-black/5 hover:shadow-xl hover:shadow-lt-green-900/5 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
             >
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-lt-green-50">
@@ -73,7 +68,7 @@ export default function Services() {
               </p>
 
               <div className="absolute -bottom-16 -right-16 w-56 h-56 rounded-full blur-3xl transition-opacity bg-lt-green-100 opacity-0 group-hover:opacity-100" />
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

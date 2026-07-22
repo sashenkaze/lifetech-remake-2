@@ -24,7 +24,7 @@
 }
 
 html, body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); }
-html { scroll-padding-top: 80px; }
+html { scroll-padding-top: 72px; }
 body { -webkit-font-smoothing: antialiased; }
 
 .font-display { font-family: var(--font-display); letter-spacing: -0.02em; }

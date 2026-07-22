@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Lenis from "lenis";
 import { setLenis, scrollToHash } from "./lenis.js";
-import CustomCursor from "./components/CustomCursor.jsx";
 import Navbar from "./components/Navbar.jsx";
 import { Hero, About } from "./sections/HeroAbout.jsx";
 import Products from "./sections/Products.jsx";
@@ -14,9 +13,8 @@ import Footer, { WhatsAppFab } from "./sections/Footer.jsx";
 export default function App() {
   const [mode, setMode] = useState("green");
 
-  // Init Lenis smooth scroll and expose singleton
   useEffect(() => {
-    const lenis = new Lenis({ smoothWheel: true, lerp: 0.09 });
+    const lenis = new Lenis({ smoothWheel: true, lerp: 0.18 });
     setLenis(lenis);
 
     let raf;
@@ -33,7 +31,6 @@ export default function App() {
     };
   }, []);
 
-  // Global anchor click handler — intercept all `<a href="#...">` clicks
   useEffect(() => {
     const handleAnchorClick = (e) => {
       const anchor = e.target.closest("a[href^='#']");
@@ -42,21 +39,15 @@ export default function App() {
       if (!hash || hash === "#") return;
       e.preventDefault();
       scrollToHash(hash);
-      // Update URL hash without jumping
       history.pushState(null, "", hash);
     };
-
     document.addEventListener("click", handleAnchorClick);
     return () => document.removeEventListener("click", handleAnchorClick);
   }, []);
 
-  // Handle initial hash on page load
   useEffect(() => {
     const hash = window.location.hash;
-    if (hash) {
-      // Small delay to ensure Lenis is ready and page is laid out
-      setTimeout(() => scrollToHash(hash), 300);
-    }
+    if (hash) setTimeout(() => scrollToHash(hash), 100);
   }, []);
 
   useEffect(() => {
@@ -73,7 +64,6 @@ export default function App() {
 
   return (
     <div className="relative">
-      <CustomCursor />
       <Navbar mode={mode} />
       <main>
         <Hero />

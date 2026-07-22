@@ -15,13 +15,13 @@ export function getLenis() {
  * @param {string} hash  e.g. "#about" or "about"
  * @param {number} [offset=80]  px offset from top (for fixed navbar)
  */
-export function scrollToHash(hash, offset = 80) {
+export function scrollToHash(hash, offset = 72) {
   const id = hash.startsWith("#") ? hash.slice(1) : hash;
   const el = document.getElementById(id);
   if (!el) return;
 
   if (_lenis) {
-    _lenis.scrollTo(el, { offset: -offset, duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    _lenis.scrollTo(el, { offset: -offset, duration: 0.6, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
   } else {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }

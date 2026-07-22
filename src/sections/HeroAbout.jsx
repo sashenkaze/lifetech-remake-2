@@ -1,16 +1,9 @@
 import { motion } from "framer-motion";
 import logoSvg from "../assets/logo-C7x2HOp7.svg";
 
-const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
-const item = {
-  hidden: { y: 24, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-};
-
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24">
-      {/* Background */}
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-lt-green-50 via-white to-white" />
       <div className="absolute -top-40 -left-40 w-xl h-xl rounded-full bg-lt-green-100 blur-3xl opacity-70 -z-10" />
       <div className="absolute top-1/3 -right-40 w-120 h-120 rounded-full bg-emerald-200/50 blur-3xl -z-10" />
@@ -25,26 +18,27 @@ export function Hero() {
       />
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center py-24">
-        <motion.div variants={stagger} initial="hidden" animate="show" className="lg:col-span-7">
-          <motion.div variants={item} className="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur border border-lt-green-100 px-4 py-1.5 text-sm text-lt-green-700 shadow-sm">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="lg:col-span-7"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur border border-lt-green-100 px-4 py-1.5 text-sm text-lt-green-700 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-lt-green-500 animate-pulse" />
             IT Solutions & Development
-          </motion.div>
-          <motion.h1
-            variants={item}
-            className="font-display mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] text-ink"
-          >
+          </div>
+          <h1 className="font-display mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] text-ink">
             Futuristic Living
             <br />
             <span className="text-lt-green-600">With</span>
             <br />
-            The Future 
-            {/* <span className="caret text-lt-green-600 font-light">|</span> */}
-          </motion.h1>
-          <motion.p variants={item} className="mt-8 max-w-xl text-lg text-ink-soft leading-relaxed">
+            The Future
+          </h1>
+          <p className="mt-8 max-w-xl text-lg text-ink-soft leading-relaxed">
             Whether a mobile, desktop or web application, we will design, build and maintain everything according to your <span className="text-lt-green-700 font-medium">vision</span>.
-          </motion.p>
-          <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
             <a href="#services" className="group inline-flex items-center gap-2 bg-ink text-white px-7 py-3.5 rounded-full font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
               Our Services
               <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -52,46 +46,20 @@ export function Hero() {
             <a href="#about" className="inline-flex items-center gap-2 bg-white border border-black/10 px-7 py-3.5 rounded-full font-medium hover:border-lt-green-600 hover:text-lt-green-700 transition-all">
               Learn More
             </a>
-          </motion.div>
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="lg:col-span-5 flex justify-center items-center"
         >
-          {/* Hero logo ring */}
           <div style={{ position: "relative", width: 380, height: 380, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            {/* Outer ring — spins CW */}
-            <div className="ring-outer" style={{
-              position: "absolute", inset: 0,
-              borderRadius: "50%",
-              border: "2px solid rgba(74,222,128,.3)",
-            }} />
-            {/* Inner ring — spins CCW */}
-            <div className="ring-inner" style={{
-              position: "absolute", inset: 24,
-              borderRadius: "50%",
-              border: "1.5px solid rgba(52,211,153,.4)",
-            }} />
-            {/* Glow layer */}
-            <div className="ring-glow" style={{
-              position: "absolute", inset: 32,
-              borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(187,247,208,.6), transparent 70%)",
-              filter: "blur(20px)",
-            }} />
-            {/* Logo circle */}
-            <div className="logo-circle" style={{
-              position: "relative",
-              width: 290, height: 290,
-              background: "linear-gradient(145deg, #fff, #f8fafc)",
-              borderRadius: "50%",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              boxShadow: "0 20px 60px rgba(22,163,74,.18), 0 4px 16px rgba(0,0,0,.06)",
-              border: "1px solid rgba(187,247,208,.7)",
-            }}>
+            <div className="ring-outer" style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "2px solid rgba(74,222,128,.3)" }} />
+            <div className="ring-inner" style={{ position: "absolute", inset: 24, borderRadius: "50%", border: "1.5px solid rgba(52,211,153,.4)" }} />
+            <div className="ring-glow" style={{ position: "absolute", inset: 32, borderRadius: "50%", background: "radial-gradient(circle, rgba(187,247,208,.6), transparent 70%)", filter: "blur(20px)" }} />
+            <div className="logo-circle" style={{ position: "relative", width: 290, height: 290, background: "linear-gradient(145deg, #fff, #f8fafc)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 20px 60px rgba(22,163,74,.18), 0 4px 16px rgba(0,0,0,.06)", border: "1px solid rgba(187,247,208,.7)" }}>
               <img src={logoSvg} alt="Lifetech" style={{ width: 170, height: 170, objectFit: "contain" }} />
             </div>
           </div>
@@ -105,23 +73,12 @@ export function About() {
   return (
     <section id="about" className="relative py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8 }}
-          className="relative"
-        >
+        <div className="relative">
           <div className="relative rounded-4xl bg-linear-to-br from-lt-green-50 to-emerald-100/60 p-12 border border-lt-green-100">
             <img src={logoSvg} alt="About Lifetech" className="w-full max-w-sm mx-auto" />
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8 }}
-        >
+        </div>
+        <div>
           <div className="text-sm font-medium text-lt-green-700 uppercase tracking-widest">About Us</div>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 leading-tight">
             LIFETECH
@@ -134,7 +91,7 @@ export function About() {
               We provide services and solutions that will help your company grow, such as Human Resource & Payroll Systems, Artificial Intelligence Implementation, SEO, and many more.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
