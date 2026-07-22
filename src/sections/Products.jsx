@@ -17,72 +17,53 @@ import financialImg from "../assets/financial-DJ0L8Pdw.svg";
 import beetposLogoImg from "../assets/BEETPOS-B5eREQlo.png";
 
 const allProducts = [
-  { title: "Human Resources & Payroll System", img: humanImg },
-  { title: "Customer Bootstramble Management (CRM)", img: customerImg },
-  { title: "Search Engine Optimization (SEO)", img: searchImg },
-  { title: "Document Management System", img: documentImg },
-  { title: "Information System Product", img: informationImg },
-  { title: "Card Management System", img: cardImg },
-  { title: "Switching", img: switchingImg },
-  { title: "Multi-Vendor System", img: multiImg },
-  { title: "Risk Management", img: riskImg },
-  { title: "Fraud Detection System", img: artificalImg },
-  { title: "Digital Engagement", img: digitalImg },
-  { title: "Core Banking System", img: coreImg },
-  { title: "Anti Money Laundering System", img: antimoneyImg },
-  { title: "SWIFT Messaging System", img: swiftImg },
-  { title: "Financial Technology Solutions", img: financialImg },
+  { title: "BeetPOS", img: beetposLogoImg, href: "/product/beetpos" },
+  { title: "Product Name Here", img: beetposLogoImg, href: "/product/template" },
+  { title: "Human Resources & Payroll System", img: humanImg, href: "#" },
+  { title: "Customer Bootstramble Management (CRM)", img: customerImg, href: "#" },
+  { title: "Search Engine Optimization (SEO)", img: searchImg, href: "#" },
+  { title: "Document Management System", img: documentImg, href: "#" },
+  { title: "Information System Product", img: informationImg, href: "#" },
+  { title: "Card Management System", img: cardImg, href: "#" },
+  { title: "Switching", img: switchingImg, href: "#" },
+  { title: "Multi-Vendor System", img: multiImg, href: "#" },
+  { title: "Risk Management", img: riskImg, href: "#" },
+  { title: "Fraud Detection System", img: artificalImg, href: "#" },
+  { title: "Digital Engagement", img: digitalImg, href: "#" },
+  { title: "Core Banking System", img: coreImg, href: "#" },
+  { title: "Anti Money Laundering System", img: antimoneyImg, href: "#" },
+  { title: "SWIFT Messaging System", img: swiftImg, href: "#" },
+  { title: "Financial Technology Solutions", img: financialImg, href: "#" },
 ];
 
-// Card biasa tanpa link
-function Card({ title, img }) {
-  return (
-    <div className="group relative rounded-2xl bg-white border border-black/5 p-6 hover:border-lt-green-200 hover:shadow-xl hover:shadow-lt-green-900/5 transition-all">
+function Card({ title, img, href }) {
+  const isExternal = href.startsWith("/");
+  const inner = (
+    <>
       <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-lt-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
       <div className="w-16 h-16 rounded-xl bg-lt-green-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-        <img src={img} alt={title} className="w-10 h-10" />
+        <img src={img} alt={title} className="w-10 h-10 object-contain" />
       </div>
       <h3 className="font-display font-semibold text-lg text-ink leading-snug">{title}</h3>
       <div className="mt-4 h-0.5 w-8 bg-lt-green-600 group-hover:w-full transition-all duration-500" />
-    </div>
+    </>
   );
-}
 
-// Card produk dengan halaman tersendiri — klik diarahkan ke route
-function ProductPageCard({ title, img, href, accent = "blue", tag }) {
+  const className =
+    "group relative rounded-2xl bg-white border border-black/5 p-6 hover:border-lt-green-200 hover:shadow-xl hover:shadow-lt-green-900/5 transition-all block";
+
+  if (isExternal) {
+    return (
+      <Link to={href} className={className}>
+        {inner}
+      </Link>
+    );
+  }
+
   return (
-    <Link
-      to={href}
-      className={
-        "group relative rounded-2xl border p-6 transition-all block " +
-        (accent === "blue"
-          ? "bg-bp-blue-50 border-bp-blue-100 hover:border-bp-blue-300 hover:shadow-xl hover:shadow-bp-blue-900/5"
-          : "bg-lt-green-50 border-lt-green-100 hover:border-lt-green-300 hover:shadow-xl hover:shadow-lt-green-900/5")
-      }
-    >
-      {tag && (
-        <div className={
-          "absolute top-4 right-4 text-xs font-semibold px-2 py-0.5 rounded-full " +
-          (accent === "blue" ? "bg-bp-blue-600 text-white" : "bg-lt-green-600 text-white")
-        }>
-          {tag}
-        </div>
-      )}
-      <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform bg-white shadow-sm">
-        <img src={img} alt={title} className="w-12 h-auto object-contain" />
-      </div>
-      <h3 className="font-display font-semibold text-lg text-ink leading-snug">{title}</h3>
-      <div className={
-        "mt-3 text-sm font-medium flex items-center gap-1 " +
-        (accent === "blue" ? "text-bp-blue-600" : "text-lt-green-600")
-      }>
-        Learn more <span className="transition-transform group-hover:translate-x-1">→</span>
-      </div>
-      <div className={
-        "mt-3 h-0.5 w-8 group-hover:w-full transition-all duration-500 " +
-        (accent === "blue" ? "bg-bp-blue-500" : "bg-lt-green-600")
-      } />
-    </Link>
+    <a href={href} className={className}>
+      {inner}
+    </a>
   );
 }
 
@@ -97,26 +78,6 @@ export default function Products() {
           </h2>
         </div>
 
-        {/* Featured products dengan halaman tersendiri */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-          <ProductPageCard
-            title="BeetPOS"
-            img={beetposLogoImg}
-            href="/product/beetpos"
-            accent="blue"
-            tag="POS System"
-          />
-          {/* Template produk kedua — salin dan sesuaikan */}
-          <ProductPageCard
-            title="Product Name Here"
-            img={beetposLogoImg}
-            href="/product/template"
-            accent="green"
-            tag="Coming Soon"
-          />
-        </div>
-
-        {/* Solutions grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {allProducts.map((s) => (
             <Card key={s.title} {...s} />

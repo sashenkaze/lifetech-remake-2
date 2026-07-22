@@ -4,6 +4,7 @@ import Lenis from "lenis";
 import { setLenis, scrollToHash } from "./lenis.js";
 
 import Navbar from "./components/Navbar.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 import { Hero, About } from "./sections/HeroAbout.jsx";
 import Products from "./sections/Products.jsx";
 import Services from "./sections/Services.jsx";
@@ -72,10 +73,13 @@ function HomePage() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/product/beetpos" element={<BeetPOSPage />} />
-      <Route path="/product/template" element={<TemplatePage />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/product/beetpos" element={<BeetPOSPage />} />
+        <Route path="/product/template" element={<TemplatePage />} />
+      </Routes>
+    </>
   );
 }
