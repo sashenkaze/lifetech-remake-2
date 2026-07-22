@@ -9,8 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/lifetech-remake-2/assets/index-CS219tOk.js"></script>
-    <link rel="stylesheet" crossorigin href="/lifetech-remake-2/assets/index-Ce6_QaAv.css">
+    <!-- GH Pages SPA routing restore -->
+    <script>
+      (function(){
+        var p = window.location.search.match(/[?&]p=([^&]*)/);
+        if (p) {
+          var q = window.location.search.match(/[?&]q=([^&]*)/);
+          window.history.replaceState(
+            null, null,
+            window.location.pathname.split('?')[0] +
+            p[1].split('~').join('/') +
+            (q ? ('?' + q[1].split('~').join('&')) : '') +
+            window.location.hash
+          );
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/lifetech-remake-2/assets/index-DpQkSJ8S.js"></script>
+    <link rel="stylesheet" crossorigin href="/lifetech-remake-2/assets/index-D1QV_Ikm.css">
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lifetech</title>
+    <script>
+      // SPA redirect trick for GitHub Pages
+      // Saves the path and redirects to index.html, then index.html restores it
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + 1).join('/') + '/?p=' +
+        l.pathname.slice(1).split('/').join('~') +
+        (l.search ? '&q=' + l.search.slice(1).split('&').join('~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+</html>
