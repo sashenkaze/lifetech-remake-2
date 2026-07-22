@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import logoSvg from "../assets/logo-C7x2HOp7.svg";
 import { scrollToHash } from "../lenis.js";
+import { usePageTransition } from "../hooks/usePageTransition.js";
 
 const links = [
   { label: "Home", href: "#home", id: "home" },
@@ -17,10 +19,15 @@ function getNavbarHeight() {
 }
 
 export default function Navbar({ mode }) {
+  const location = useLocation();
+  const transitionNavigate = usePageTransition();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
   const suppressRef = useRef(false);
+
+  // Check if we're on the home page
+  const isHomePage = location.pathname === "/";
 
   // Navbar background on scroll
   useEffect(() => {
@@ -57,10 +64,19 @@ export default function Navbar({ mode }) {
 
   const handleNavClick = (e, id, href) => {
     e.preventDefault();
+    
+    // If not on home page, navigate to home first with the hash
+    if (!isHomePage) {
+      const targetPath = `/${href}`;
+      transitionNavigate(targetPath);
+      setOpen(false);
+      return;
+    }
+
+    // On home page: scroll to section
     setActive(id);
     suppressRef.current = true;
 
-    // Pass dynamic navbar height to scrollToHash
     const navHeight = getNavbarHeight();
     scrollToHash(href, navHeight);
     history.pushState(null, "", href);

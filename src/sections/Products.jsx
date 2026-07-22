@@ -21,7 +21,7 @@ const allProducts = [
   { title: "BeetPOS", img: beetposLogoImg, href: "/product/beetpos" },
   { title: "Product Name Here", img: beetposLogoImg, href: "/product/template" },
   { title: "Human Resources & Payroll System", img: humanImg, href: "#" },
-  { title: "Customer Bootstramble Management (CRM)", img: customerImg, href: "#" },
+  { title: "Customer Relationship Management (CRM)", img: customerImg, href: "/product/crm" },
   { title: "Search Engine Optimization (SEO)", img: searchImg, href: "#" },
   { title: "Document Management System", img: documentImg, href: "#" },
   { title: "Information System Product", img: informationImg, href: "#" },

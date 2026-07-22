@@ -12,7 +12,6 @@ import Clients from "./sections/Clients.jsx";
 import Transition from "./sections/Transition.jsx";
 import Footer, { WhatsAppFab } from "./sections/Footer.jsx";
 import BeetPOSPage from "./pages/BeetPOSPage.jsx";
-import TemplatePage from "./pages/TemplatePage.jsx";
 
 function HomePage() {
   const [mode, setMode] = useState("green");
@@ -50,8 +49,11 @@ function HomePage() {
   }, []);
 
   useEffect(() => {
+    // Handle hash on mount and when coming from another route
     const hash = window.location.hash;
-    if (hash) setTimeout(() => scrollToHash(hash), 100);
+    if (hash) {
+      setTimeout(() => scrollToHash(hash), 300);
+    }
   }, []);
 
   return (
@@ -79,7 +81,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product/beetpos" element={<BeetPOSPage />} />
-        <Route path="/product/template" element={<TemplatePage />} />
       </Routes>
     </>
   );
