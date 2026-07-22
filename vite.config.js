@@ -4,5 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig(({ command }) => ({
   plugins: [react(), tailwindcss()],
-  base: command === 'build' ? '/lifetech-remake-2/' : '/',
+  // base: command === 'build' ? '/lifetech-remake-2/' : '/',
+  base: '/lifetech-remake-2/',
 }));
