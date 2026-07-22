@@ -69,6 +69,7 @@ function HomePage() {
       <WhatsAppFab />
     </div>
   );
+
 }
 
 export default function App() {
