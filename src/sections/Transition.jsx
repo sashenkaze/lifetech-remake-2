@@ -20,7 +20,7 @@ export default function Transition() {
             Whether a mobile, desktop or web application, we will design, build and maintain everything according to your vision.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <a href="#beetpos" className="inline-flex items-center gap-2 bg-ink text-white px-7 py-3.5 rounded-full font-medium shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#product" className="inline-flex items-center gap-2 bg-ink text-white px-7 py-3.5 rounded-full font-medium shadow-lg hover:-translate-y-0.5 transition-all">
               Get Started <span>→</span>
             </a>
             <a href="#contact" className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-black/10 px-7 py-3.5 rounded-full font-medium hover:border-bp-blue-600 hover:text-bp-blue-700 transition-all">

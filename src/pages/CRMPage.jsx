@@ -153,11 +153,11 @@ export default function CRMPage() {
                 </section>
 
                 {/* Features */}
-                <section className="relative py-55">
-                    <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 leading-[1.05] ms-70">
-                        Track Your Sales & Clients<span className="text-bp-blue-600"> Like You Track Your Future</span>
+                <section className="relative py-30">
+                    <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 leading-[1.05] ms-110 mb-14">
+                        Why Choose<span className="text-bp-blue-600"> CMRTrack?</span>
                     </h2>
-                    <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+                    <div className="max-w-7xl mx-auto px-60 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 gap-x-20">
                         {features.map((f) => (
                             <div
                                 key={f.title}
