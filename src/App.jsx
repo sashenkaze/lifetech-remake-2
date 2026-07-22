@@ -12,6 +12,7 @@ import Clients from "./sections/Clients.jsx";
 import Transition from "./sections/Transition.jsx";
 import Footer, { WhatsAppFab } from "./sections/Footer.jsx";
 import BeetPOSPage from "./pages/BeetPOSPage.jsx";
+import CRMPage from "./pages/CRMPage.jsx";
 
 function HomePage() {
   const [mode, setMode] = useState("green");
@@ -81,6 +82,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product/beetpos" element={<BeetPOSPage />} />
+        <Route path="/product/crm" element={<CRMPage/ >} />
       </Routes>
     </>
   );
