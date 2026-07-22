@@ -2,13 +2,13 @@ import logoSvg from "../assets/logo-C7x2HOp7.svg";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative bg-ink text-white pt-20 pb-10 overflow-hidden">
+    <footer id="contact" className="relative bg-ink text-white pt-10 pb-6 overflow-hidden">
       <div className="absolute inset-0 opacity-40" style={{
         backgroundImage:
           "radial-gradient(circle at 15% 20%, rgba(16,185,129,.25), transparent 40%), radial-gradient(circle at 85% 80%, rgba(59,130,246,.3), transparent 45%)",
       }} />
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+        <div className="grid lg:grid-cols-12 gap-12 pb-8 border-b border-white/10">
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3">
               <img src={logoSvg} alt="Lifetech" className="h-10 brightness-0 invert" />
@@ -49,7 +49,6 @@ export default function Footer() {
               <li><a href="#about" className="hover:text-white transition">About</a></li>
               <li><a href="#product" className="hover:text-white transition">Product</a></li>
               <li><a href="#services" className="hover:text-white transition">Services</a></li>
-              <li><a href="#beetpos" className="hover:text-white transition">BeetPOS</a></li>
             </ul>
           </div>
         </div>
