@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { usePageTransition } from "../hooks/usePageTransition.js";
 import humanImg from "../assets/human-Bx1kiDJp.svg";
 import customerImg from "../assets/customer-M9LGYp1A.svg";
 import searchImg from "../assets/search-DbVPPTzh.svg";
@@ -37,7 +38,16 @@ const allProducts = [
 ];
 
 function Card({ title, img, href }) {
+  const navigate = usePageTransition();
   const isExternal = href.startsWith("/");
+  
+  const handleClick = (e) => {
+    if (isExternal) {
+      e.preventDefault();
+      navigate(href);
+    }
+  };
+
   const inner = (
     <>
       <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-lt-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
@@ -54,7 +64,7 @@ function Card({ title, img, href }) {
 
   if (isExternal) {
     return (
-      <Link to={href} className={className}>
+      <Link to={href} onClick={handleClick} className={className}>
         {inner}
       </Link>
     );
