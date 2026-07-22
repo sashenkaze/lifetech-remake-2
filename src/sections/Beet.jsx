@@ -109,7 +109,7 @@ const testimonials = [
 
 export function BeetHero() {
   return (
-    <section id="beetpos" className="relative pt-24 pb-32 overflow-hidden bg-linear-to-b from-bp-blue-50 to-white">
+    <section id="beetpos" className="relative min-h-screen pt-55 pb-55 overflow-hidden bg-linear-to-b from-bp-blue-50 to-white flex flex-col justify-center">
       <div className="absolute -top-40 -right-40 w-xl h-144 rounded-full bg-bp-blue-100 blur-3xl opacity-70" />
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-6">

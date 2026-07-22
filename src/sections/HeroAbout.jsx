@@ -3,7 +3,7 @@ import logoSvg from "../assets/logo-C7x2HOp7.svg";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24">
+    <section id="home" className="relative min-h-svh flex items-center overflow-hidden pt-1">
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-lt-green-50 via-white to-white" />
       <div className="absolute -top-40 -left-40 w-xl h-xl rounded-full bg-lt-green-100 blur-3xl opacity-70 -z-10" />
       <div className="absolute top-1/3 -right-40 w-120 h-120 rounded-full bg-emerald-200/50 blur-3xl -z-10" />
@@ -22,7 +22,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-7"
+          className="lg:col-span-7 order-2 lg:order-1"
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur border border-lt-green-100 px-4 py-1.5 text-sm text-lt-green-700 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-lt-green-500 animate-pulse" />
@@ -53,14 +53,14 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="lg:col-span-5 flex justify-center items-center"
+          className="lg:col-span-5 flex justify-center items-center order-1 lg:order-2"
         >
-          <div style={{ position: "relative", width: 380, height: 380, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ position: "relative", width: 320, height: 320, display: "flex", alignItems: "center", justifyContent: "center" }} className="lg:w-95 lg:h-95">
             <div className="ring-outer" style={{ position: "absolute", inset: 0, borderRadius: "50%", border: "2px solid rgba(74,222,128,.3)" }} />
-            <div className="ring-inner" style={{ position: "absolute", inset: 24, borderRadius: "50%", border: "1.5px solid rgba(52,211,153,.4)" }} />
-            <div className="ring-glow" style={{ position: "absolute", inset: 32, borderRadius: "50%", background: "radial-gradient(circle, rgba(187,247,208,.6), transparent 70%)", filter: "blur(20px)" }} />
-            <div className="logo-circle" style={{ position: "relative", width: 290, height: 290, background: "linear-gradient(145deg, #fff, #f8fafc)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 20px 60px rgba(22,163,74,.18), 0 4px 16px rgba(0,0,0,.06)", border: "1px solid rgba(187,247,208,.7)" }}>
-              <img src={logoSvg} alt="Lifetech" style={{ width: 170, height: 170, objectFit: "contain" }} />
+            <div className="ring-inner" style={{ position: "absolute", inset: 18, borderRadius: "50%", border: "1.5px solid rgba(52,211,153,.4)" }} />
+            <div className="ring-glow" style={{ position: "absolute", inset: 24, borderRadius: "50%", background: "radial-gradient(circle, rgba(187,247,208,.6), transparent 70%)", filter: "blur(20px)" }} />
+            <div className="logo-circle" style={{ position: "relative", width: 250, height: 250, background: "linear-gradient(145deg, #fff, #f8fafc)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 20px 60px rgba(22,163,74,.18), 0 4px 16px rgba(0,0,0,.06)", border: "1px solid rgba(187,247,208,.7)" }}>
+              <img src={logoSvg} alt="Lifetech" style={{ width: 150, height: 150, objectFit: "contain" }} />
             </div>
           </div>
         </motion.div>
@@ -71,7 +71,7 @@ export function Hero() {
 
 export function About() {
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
+    <section id="about" className="relative min-h-svh flex items-center py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <div className="relative rounded-4xl bg-linear-to-br from-lt-green-50 to-emerald-100/60 p-12 border border-lt-green-100">

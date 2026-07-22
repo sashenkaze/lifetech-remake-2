@@ -2,7 +2,7 @@ import logoSvg from "../assets/logo-C7x2HOp7.svg";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative bg-ink text-white pt-24 pb-10 overflow-hidden">
+    <footer id="contact" className="relative bg-ink text-white pt-20 pb-10 overflow-hidden">
       <div className="absolute inset-0 opacity-40" style={{
         backgroundImage:
           "radial-gradient(circle at 15% 20%, rgba(16,185,129,.25), transparent 40%), radial-gradient(circle at 85% 80%, rgba(59,130,246,.3), transparent 45%)",

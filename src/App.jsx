@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import { setLenis, scrollToHash } from "./lenis.js";
+
 import Navbar from "./components/Navbar.jsx";
 import { Hero, About } from "./sections/HeroAbout.jsx";
 import Products from "./sections/Products.jsx";
 import Services from "./sections/Services.jsx";
 import Clients from "./sections/Clients.jsx";
 import Transition from "./sections/Transition.jsx";
-import { BeetHero, Features, HowItWorks, Testimonials, Pricing } from "./sections/Beet.jsx";
 import Footer, { WhatsAppFab } from "./sections/Footer.jsx";
+import BeetPOSPage from "./pages/BeetPOSPage.jsx";
+import TemplatePage from "./pages/TemplatePage.jsx";
 
-export default function App() {
+function HomePage() {
   const [mode, setMode] = useState("green");
 
   useEffect(() => {
@@ -50,18 +53,6 @@ export default function App() {
     if (hash) setTimeout(() => scrollToHash(hash), 100);
   }, []);
 
-  useEffect(() => {
-    const el = document.getElementById("beetpos");
-    const onScroll = () => {
-      if (!el) return;
-      const y = el.getBoundingClientRect().top;
-      setMode(y < window.innerHeight * 0.4 ? "blue" : "green");
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <div className="relative">
       <Navbar mode={mode} />
@@ -72,14 +63,19 @@ export default function App() {
         <Services />
         <Clients />
         <Transition />
-        <BeetHero />
-        <Features />
-        <HowItWorks />
-        <Testimonials />
-        <Pricing />
       </main>
       <Footer />
       <WhatsAppFab />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/product/beetpos" element={<BeetPOSPage />} />
+      <Route path="/product/template" element={<TemplatePage />} />
+    </Routes>
   );
 }
