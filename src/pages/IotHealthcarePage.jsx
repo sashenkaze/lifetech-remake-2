@@ -111,7 +111,7 @@ export default function IotHealthcarePage() {
                                 <img src={crmtrackLogo} alt="CRMTrack" className="h-14 mb-8" />
                                 <div className="text-sm font-medium text-lt-green-700 uppercase tracking-widest">Features</div>
                                 <h2 className="font-display text-4xl md:text-6xl font-bold mt-3 leading-[1.05]">
-                                    STILL in development! <span className="text-lt-green-600">i feel like doing another part first ;)</span>
+                                    STILL in development! <span className="text-lt-green-600">ts just a copy of CRM</span>
                                 </h2>
                                 <p className="mt-6 text-lg text-ink-soft max-w-lg">
                                     Built to support companies of all sizes with flexible, scalable, and data-driven technology.

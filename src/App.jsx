@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigationType } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import { setLenis, scrollToHash } from "./lenis.js";
@@ -14,27 +15,60 @@ import Footer, { WhatsAppFab } from "./sections/Footer.jsx";
 import BeetPOSPage from "./pages/BeetPOSPage.jsx";
 import CRMPage from "./pages/CRMPage.jsx";
 import IotHealthcarePage from "./pages/IotHealthcarePage.jsx";
+import LMSPage from "./pages/LMSPage.jsx";
 
 function HomePage() {
   const [mode, setMode] = useState("green");
 
   useEffect(() => {
-    const lenis = new Lenis({ smoothWheel: true, lerp: 0.18 });
-    setLenis(lenis);
+  const lenis = new Lenis({ smoothWheel: true, lerp: 0.18 });
+  setLenis(lenis);
 
-    let raf;
-    const loop = (t) => {
-      lenis.raf(t);
-      raf = requestAnimationFrame(loop);
-    };
+  // Fungsi untuk melacak section saat scroll
+  const handleScroll = () => {
+    // Ambil semua section yang punya ID untuk hash (misal: #home, #about, dll)
+    const sections = document.querySelectorAll("main > section[id], main > div[id]");
+    const scrollPosition = lenis.scroll; // Posisi scroll vertikal saat ini
+    const triggerPoint = window.innerHeight * 0.3; // Trigger saat section melewati 30% layar
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const id = section.getAttribute("id");
+
+      // Cek apakah posisi scroll berada di dalam range section ini
+      if (
+        scrollPosition >= sectionTop - triggerPoint &&
+        scrollPosition < sectionTop + sectionHeight - triggerPoint
+      ) {
+        const currentHash = `#${id}`;
+        // Hanya ganti URL jika hash-nya berbeda agar tidak memicu overhead
+        if (window.location.hash !== currentHash) {
+          // WAJIB pakai replaceState agar tidak merusak history tombol BACK browser
+          window.history.replaceState(null, "", currentHash);
+        }
+      }
+    });
+  };
+
+  // Daftarkan event scroll ke Lenis
+  lenis.on("scroll", handleScroll);
+
+  let raf;
+  const loop = (t) => {
+    lenis.raf(t);
     raf = requestAnimationFrame(loop);
+  };
+  raf = requestAnimationFrame(loop);
 
-    return () => {
-      cancelAnimationFrame(raf);
-      lenis.destroy();
-      setLenis(null);
-    };
-  }, []);
+  return () => {
+    cancelAnimationFrame(raf);
+    lenis.off("scroll", handleScroll); // Bersihkan event
+    lenis.destroy();
+    setLenis(null);
+  };
+}, []);
+
 
   useEffect(() => {
     const handleAnchorClick = (e) => {
@@ -85,6 +119,7 @@ export default function App() {
         <Route path="/product/beetpos" element={<BeetPOSPage />} />
         <Route path="/product/crm" element={<CRMPage />} />
         <Route path="/product/iothealthcare" element={<IotHealthcarePage />} />
+        <Route path="/product/lms" element={<LMSPage />} />
       </Routes>
     </>
   );

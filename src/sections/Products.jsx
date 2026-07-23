@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { usePageTransition } from "../hooks/usePageTransition.js";
-import customerImg from "../assets/iothealthcare.svg";
-import searchImg from "../assets/search-DbVPPTzh.svg";
+import iotHealthcareImg from "../assets/iothealthcare.svg";
+import lmsImg from "../assets/lms.svg";
 import documentImg from "../assets/document-DQneznOd.svg";
 import informationImg from "../assets/information-DUdVVZIc.svg";
 import artificalImg from "../assets/artifical-DqrJOi0u.svg";
@@ -20,20 +20,20 @@ import crmtrackLogoImg from "../assets/crmt-logo.svg";
 const allProducts = [
   { title: "BeetPOS", img: beetposLogoImg, href: "/product/beetpos" },
   { title: "CRMTrack", img: crmtrackLogoImg, href: "/product/crm" },
-  { title: "IoT Healthcare", img: customerImg, href: "/product/iothealthcare" },
-  { title: "Search Engine Optimization (SEO)", img: searchImg, href: "#" },
-  { title: "Document Management System", img: documentImg, href: "#" },
-  { title: "Information System Product", img: informationImg, href: "#" },
-  { title: "Card Management System", img: cardImg, href: "#" },
-  { title: "Switching", img: switchingImg, href: "#" },
-  { title: "Multi-Vendor System", img: multiImg, href: "#" },
-  { title: "Risk Management", img: riskImg, href: "#" },
-  { title: "Fraud Detection System", img: artificalImg, href: "#" },
-  { title: "Digital Engagement", img: digitalImg, href: "#" },
-  { title: "Core Banking System", img: coreImg, href: "#" },
-  { title: "Anti Money Laundering System", img: antimoneyImg, href: "#" },
-  { title: "SWIFT Messaging System", img: swiftImg, href: "#" },
-  { title: "Financial Technology Solutions", img: financialImg, href: "#" },
+  { title: "IoT Healthcare", img: iotHealthcareImg, href: "/product/iothealthcare" },
+  { title: "Learn Management System", img: lmsImg, href: "/product/lms" },
+  { title: "Switching", img: switchingImg, href: "" },
+  { title: "Card Management System", img: cardImg, href: "" },
+  { title: "Multi-Vendor System", img: multiImg, href: "" },
+  { title: "Risk Management", img: riskImg, href: "" },
+  { title: "Fraud Detection System", img: artificalImg, href: "" },
+  { title: "Digital Engagement", img: digitalImg, href: "" },
+  { title: "Core Banking System", img: coreImg, href: "" },
+  { title: "SWIFT Messaging System", img: swiftImg, href: "" },
+  { title: "Financial Technology Solutions", img: financialImg, href: "" },
+  { title: "Document Management System", img: documentImg, href: "" },
+  { title: "Information System Product", img: informationImg, href: "" },
+  { title: "Anti Money Laundering System", img: antimoneyImg, href: "" },
 ];
 
 function Card({ title, img, href }) {
@@ -70,7 +70,7 @@ function Card({ title, img, href }) {
   }
 
   return (
-    <a href={href} className={className}>
+    <a className={className}>
       {inner}
     </a>
   );
