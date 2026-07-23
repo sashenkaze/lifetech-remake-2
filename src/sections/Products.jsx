@@ -16,13 +16,15 @@ import swiftImg from "../assets/swift-D6gxFjFg.svg";
 import financialImg from "../assets/financial-DJ0L8Pdw.svg";
 import beetposLogoImg from "../assets/beetpos-svg.svg";
 import crmtrackLogoImg from "../assets/crmt-logo.svg";
+import arqaImg from "../assets/arqa.svg";
 
 const allProducts = [
   { title: "BeetPOS", img: beetposLogoImg, href: "/product/beetpos" },
-  { title: "CRMTrack", img: crmtrackLogoImg, href: "/product/crm" },
-  { title: "IoT Healthcare", img: iotHealthcareImg, href: "/product/iothealthcare" },
+  { title: "CRMTRACK", img: crmtrackLogoImg, href: "/product/crm" },
+  { title: "Testing Tools - ARQA", img: arqaImg, href: "/product/arqa" },
   { title: "Learn Management System", img: lmsImg, href: "/product/lms" },
-  { title: "Switching", img: switchingImg, href: "" },
+  // { title: "IoT Healthcare", img: iotHealthcareImg, href: "/product/iothealthcare" },
+  { title: "IoT Healthcare", img: iotHealthcareImg, href: "" },
   { title: "Card Management System", img: cardImg, href: "" },
   { title: "Multi-Vendor System", img: multiImg, href: "" },
   { title: "Risk Management", img: riskImg, href: "" },
