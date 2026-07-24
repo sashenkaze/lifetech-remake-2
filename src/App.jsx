@@ -16,6 +16,7 @@ import BeetPOSPage from "./pages/BeetPOSPage.jsx";
 import CRMPage from "./pages/CRMPage.jsx";
 import IotHealthcarePage from "./pages/IotHealthcarePage.jsx";
 import LMSPage from "./pages/LMSPage.jsx";
+import ARQAPage from "./pages/ARQAPage.jsx";
 
 function HomePage() {
   const [mode, setMode] = useState("green");
@@ -120,6 +121,7 @@ export default function App() {
         <Route path="/product/crm" element={<CRMPage />} />
         <Route path="/product/iothealthcare" element={<IotHealthcarePage />} />
         <Route path="/product/lms" element={<LMSPage />} />
+        <Route path="/product/arqa" element={<ARQAPage />}/>
       </Routes>
     </>
   );

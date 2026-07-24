@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Transition() {
   return (
     <section className="relative h-[60vh] overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-lt-green-50 via-cyan-50 to-bp-blue-50" />
+      <div className="absolute inset-0 bg-linear-to-b from-lt-green-50 via-cyan-50 to-bp-blue-50" />
       <div className="absolute inset-0 opacity-40" style={{
         backgroundImage:
           "radial-gradient(ellipse at 20% 30%, rgba(16,185,129,.35), transparent 55%), radial-gradient(ellipse at 80% 70%, rgba(59,130,246,.35), transparent 55%)",
